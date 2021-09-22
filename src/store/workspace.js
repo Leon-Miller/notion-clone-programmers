@@ -107,12 +107,8 @@ export default {
 }
 
 async function _request(options) {
-  const { id = '' } = options
-  return await fetch(`https://kdt.roto.codes/documents/${id}`, {
-    ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      'x-username': 'leon'
-    }
+  return await fetch('/.netlify/functions/workspace', {
+    method: 'POST',
+    body: JSON.stringify(options)
   }).then(res => res.json())
 }
