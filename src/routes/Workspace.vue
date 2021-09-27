@@ -9,6 +9,7 @@
         @input="onInput">
         {{ title }}
       </div>
+      <!-- eslint-disable -->
       <div
         ref="content"
         class="content"
@@ -17,6 +18,7 @@
         @input="onInput"
         v-html="content">
       </div>
+      <!-- eslint-enable -->
     </div>
   </section>
 </template>

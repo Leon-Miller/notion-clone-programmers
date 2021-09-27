@@ -4,7 +4,11 @@
     :style="{ width: `${navWidth}px` }">
     <div class="header">
       <div class="user-profile"></div>
-      Leon's Notion
+      <div class="title">
+        Leon's Notion
+      </div>
+      <div style="flex-grow: 1; margin-right: 10px;"></div>
+      <Loader :loading="$store.getters['workspace/loading']" />
     </div>
     <ul>
       <WorkspaceItem
@@ -29,10 +33,12 @@
 <script>
 import interact from 'interactjs'
 import WorkspaceItem from '~/components/WorkspaceItem'
+import Loader from '~/components/Loader'
 
 export default {
   components: {
-    WorkspaceItem
+    WorkspaceItem,
+    Loader
   },
   data() {
     return {
@@ -99,6 +105,12 @@ nav {
       margin-right: 10px;
       background-image: url("https://avatars.githubusercontent.com/u/87857358?v=4");
       background-size: cover;
+      flex-shrink: 0;
+    }
+    .title {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
     }
   }
   ul {
