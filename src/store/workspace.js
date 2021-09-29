@@ -54,6 +54,7 @@ export default {
         workspaces
       })
       dispatch('findWorkspacePath')
+      // 항목이 하나도 없는 경우, 새로운 기본 항목을 하나 생성!
       if (!workspaces.length) {
         await dispatch('createWorkspace')
       }
@@ -91,6 +92,7 @@ export default {
         method: 'DELETE'
       })
       await dispatch('readWorkspaces')
+      // 현재 페이지에서 도큐먼트를 삭제한 경우, 가지고 있는 첫 번째 도큐먼트 페이지로 이동!
       if (id === parseInt(router.currentRoute.value.params.id, 10)) {
         router.push({
           name: 'Workspace',

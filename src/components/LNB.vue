@@ -10,6 +10,7 @@
       <div style="flex-grow: 1; margin-right: 10px;"></div>
       <Loader :loading="$store.getters['workspace/loading']" />
     </div>
+    <h2>WORKSPACE</h2>
     <ul>
       <WorkspaceItem
         v-for="workspace in workspaces"
@@ -112,6 +113,14 @@ nav {
       overflow: hidden;
       white-space: nowrap;
     }
+  }
+  h2 {
+    color: rgba($color-font, .35);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    padding: 6px 14px;
   }
   ul {
     flex-grow: 1;

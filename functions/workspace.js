@@ -14,6 +14,7 @@ exports.handler = async function (event) {
     },
     data: body
   })
+  // /.netlify/functions/workspace
   return {
     statusCode: 200,
     body: JSON.stringify(data)

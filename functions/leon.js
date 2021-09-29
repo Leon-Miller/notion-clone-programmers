@@ -1,4 +1,5 @@
 exports.handler = async function () {
+  // /.netlify/functions/leon
   return {
     statusCode: 200,
     body: JSON.stringify({
